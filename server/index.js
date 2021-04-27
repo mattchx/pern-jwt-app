@@ -1,17 +1,18 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
 // middleware
-app.use(express.json()) //req.body
-app.use(cors())
+app.use(express.json()); //req.body
+app.use(cors());
 
 // ROUTES //
 
 // register and login routes
 
-app.use('/auth', require('./routes/jwtAuth'))
+app.use('/auth', require('./routes/jwtAuth'));
+
 // request listener
 app.listen(5000, () => {
-    console.log('Server is live on port 5000')
-})
+  console.log('Server is live on port 5000');
+});
