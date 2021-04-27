@@ -41,7 +41,7 @@ router.post('/register', validInfo, async (req, res) => {
 });
 
 // LOGIN route
-router.post('/login', validInfo, async (req, res) => {
+router.get('/login', validInfo, async (req, res) => {
   try {
     // 1. Destruct data from body
     const { email, password } = req.body;
