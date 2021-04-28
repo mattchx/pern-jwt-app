@@ -28,7 +28,7 @@ function App() {
       <Fragment>
         <Router>
           <Switch>
-            <Route
+          <Route
               exact
               path="/login"
               render={props =>
@@ -46,7 +46,7 @@ function App() {
                 !isAuthenticated ? (
                   <Register {...props} />
                 ) : (
-                  <Redirect to="/login" />
+                  <Redirect to="/dashboard" />
                 )
               }
             />
@@ -54,7 +54,7 @@ function App() {
               exact
               path="/dashboard"
               render={props =>
-                !isAuthenticated ? (
+                isAuthenticated ? (
                   <Dashboard {...props} />
                 ) : (
                   <Redirect to="/login" />
