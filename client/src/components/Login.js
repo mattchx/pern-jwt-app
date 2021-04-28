@@ -1,12 +1,12 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react';
+import { Button, Text } from '@chakra-ui/react';
+const Login = ({setAuth}) => {
+  return (
+    <Fragment>
+      <Text fontSize="5xl">Login page</Text>
+      <Button onClick={()=>setAuth(true)}>Authenticate</Button>
+    </Fragment>
+  );
+};
 
-const Login = () => {
-    return (
-        <Fragment>
-            Login
-        </Fragment>
-    )
-}
-
-export default Login
-
+export default Login;

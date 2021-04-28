@@ -23,6 +23,10 @@ import Register from './components/Register';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const setAuth = (boolean) => {
+    setIsAuthenticated(boolean)
+  }
+
   return (
     <ChakraProvider theme={theme}>
       <Fragment>
@@ -33,7 +37,7 @@ function App() {
               path="/login"
               render={props =>
                 !isAuthenticated ? (
-                  <Login {...props} />
+                  <Login {...props} setAuth={setAuth}/>
                 ) : (
                   <Redirect to="/dashboard" />
                 )
@@ -44,7 +48,7 @@ function App() {
               path="/register"
               render={props =>
                 !isAuthenticated ? (
-                  <Register {...props} />
+                  <Register {...props} setAuth={setAuth}/>
                 ) : (
                   <Redirect to="/dashboard" />
                 )
@@ -55,7 +59,7 @@ function App() {
               path="/dashboard"
               render={props =>
                 isAuthenticated ? (
-                  <Dashboard {...props} />
+                  <Dashboard {...props} setAuth={setAuth}/>
                 ) : (
                   <Redirect to="/login" />
                 )
