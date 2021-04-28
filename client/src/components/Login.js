@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
-function Login() {
+const Login = () => {
     return (
-        <div>
-            
-        </div>
+        <Fragment>
+            Login
+        </Fragment>
     )
 }
 
 export default Login
+
