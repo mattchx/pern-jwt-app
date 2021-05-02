@@ -1,19 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
+import { ChakraProvider, theme } from '@chakra-ui/react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-  Link,
 } from 'react-router-dom';
 import axios from 'axios';
 
