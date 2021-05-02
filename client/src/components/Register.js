@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import { Stack, Input, Container, Text, Button } from '@chakra-ui/react';
+import { Stack, Input, Container, Text, Button, Link } from '@chakra-ui/react';
 import axios from 'axios';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
@@ -66,6 +67,9 @@ const Register = ({ setAuth }) => {
             </Button>
           </Stack>
         </form>
+        <Link>
+          <RouterLink to="/login">Login</RouterLink>
+        </Link>
       </Container>
     </Fragment>
   );
