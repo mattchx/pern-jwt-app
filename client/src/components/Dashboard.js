@@ -1,6 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Button, Text } from '@chakra-ui/react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState('');
 
@@ -19,6 +21,7 @@ const Dashboard = ({ setAuth }) => {
     e.preventDefault();
     localStorage.removeItem('token');
     setAuth(false);
+    toast.success('You have successfully logged out.');
   };
 
   useEffect(() => {

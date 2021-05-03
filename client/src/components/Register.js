@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Stack, Input, Container, Text, Button, Link } from '@chakra-ui/react';
 import axios from 'axios';
 import { Link as RouterLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
@@ -22,13 +23,17 @@ const Register = ({ setAuth }) => {
         inputs
       );
       const { token } = response.data;
+      if (token) {
+        // set Local Storage
+        localStorage.setItem('token', token);
 
-      // set Local Storage
-      localStorage.setItem('token', token);
-
-      setAuth(true);
+        setAuth(true);
+        toast.success('Registered successfully!');
+      }
     } catch (err) {
-      console.error(err.message);
+      console.error(err.response.data);
+      setAuth(false);
+      toast.error(err.response.data);
     }
   };
 
